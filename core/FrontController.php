@@ -105,10 +105,10 @@ namespace App\core;
 								$controller = $rc->newInstance();
 								$method = $rc->getMethod($this->_action);
 								$method->invoke($controller);
-							} else throw new NotFoundPageException('Wrong Action');
-						} else throw new NotFoundPageException('Wrong Interface');
-					} else throw new NotFoundPageException('Wrong Class Controller');
-				} else throw new NotFoundPageException('Wrong File Controller');
+							} else throw new E404Exception('Wrong Action');
+						} else throw new E404Exception('Wrong Interface');
+					} else throw new E404Exception('Wrong Class Controller');
+				} else throw new E404Exception('Wrong File Controller');
 			}
 			else {
 				if(file_exists(SITE_PATH.'/modules/'. $this->_module .'/controllers/'.$this->_controller.'.php')) {
@@ -119,10 +119,10 @@ namespace App\core;
 								$controller = $rc->newInstance();
 								$method = $rc->getMethod($this->_action);
 								$method->invoke($controller);
-							} else throw new NotFoundPageException('Wrong Action');
-						} else throw new NotFoundPageException('Wrong Interface');
-					} else throw new NotFoundPageException('Wrong Class Controller');
-				} else throw new NotFoundPageException('Wrong File Controller');
+							} else throw new E404Exception('Wrong Action');
+						} else throw new E404Exception('Wrong Interface');
+					} else throw new E404Exception('Wrong Class Controller');
+				} else throw new E404Exception('Wrong File Controller');
 			}
 		}
 

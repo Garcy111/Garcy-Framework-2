@@ -10,7 +10,7 @@ class AjaxController implements \App\core\IController {
 			// Тут что то делаем
 			break;
 		default:
-			throw new \App\core\NotFoundPageException('Not existing value POST parameter flag');
+			throw new \App\core\E404Exception('Not existing value POST parameter flag');
 			break;
 		}
 	}

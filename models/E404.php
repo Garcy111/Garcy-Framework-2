@@ -3,7 +3,7 @@ namespace App\models;
 	
 use App\core\Template;
 
-class NotFoundPage extends Main {
+class E404 extends Main {
 
 	public function __construct() {
 		parent::__construct();

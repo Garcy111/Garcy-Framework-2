@@ -14,9 +14,9 @@ try{
 $frontObj = \App\core\FrontController::getInstance();
 	$frontObj->route();
 // Отображаем страничку 404
-}catch (\App\core\NotFoundPageException $e){
-	// echo $e->getMessage(); // Для отладки
-	$rc = new \ReflectionClass('\App\controllers\NotFoundPageController');
+}catch (\App\core\E404Exception $e){
+	// echo $e->getMessage();
+	$rc = new \ReflectionClass('\App\controllers\E404Controller');
 	$controller = $rc->newInstance();
 	$method = $rc->getMethod('indexAction');
 	$method->invoke($controller);
