@@ -1,0 +1,18 @@
+{
+    "name": "garcy/garcy",
+    "require": {
+        "smarty/smarty": "3.1.27",
+        "umisoft/phpmorphy" : "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Nikita Rastich",
+            "email": "garcy999@ya.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "C://OpenServer/domains/localhost/"
+        }
+    }
+}
