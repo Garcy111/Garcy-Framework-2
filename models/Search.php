@@ -3,7 +3,7 @@ namespace App\models;
 
 use App\core\SearchClass;
 use App\core\Template;
-use App\tables\Table_Blog;
+use App\tables\BlogTable;
 
 class Search extends Main {
 
@@ -27,7 +27,7 @@ class Search extends Main {
 	public function getDataSearch() {
 		$query = $this->indexQuery;
 		$select = array( "where" => "`id` >= 1" );
-		$obj = new Table_Blog($select);
+		$obj = new BlogTable($select);
 		$data = $obj->getAllRows();
 		$count = count($data);
 

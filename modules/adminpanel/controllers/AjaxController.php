@@ -1,5 +1,6 @@
 <?php
 namespace App\modules\adminpanel\controllers;
+use \App\tables\AdminpanelTable;
 class AjaxController implements \App\core\IController {
 	
 	function indexAction() {
@@ -31,7 +32,7 @@ class AjaxController implements \App\core\IController {
 			$password = strip_tags($_POST['password']);
 			$password = md5($password);
 			$select = array("where" => "`id` = 1");
-			$obj = new \App\tables\Table_Adminpanel($select);
+			$obj = new AdminpanelTable($select);
 			$dataSettings = $obj->getOneRow();
 			if($login == $dataSettings["login"] and $password == $dataSettings["password"]) {$_SESSION['admin_page'] = true;}
 				else {echo 'Не верное имя или пароль';}
@@ -64,7 +65,7 @@ class AjaxController implements \App\core\IController {
 			}
 
 			$select = array("where" => "`id` = 1");
-			$obj = new \App\tables\Table_Adminpanel($select);
+			$obj = new AdminpanelTable($select);
 			$dataSettings = $obj->getOneRow();
 
 			$old_pass = md5($old_pass);

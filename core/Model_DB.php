@@ -13,8 +13,10 @@ namespace App\core;
 
 		// имя таблицы
 		$className = get_class($this); // имя класса к которому пренадлежит объект
-		$arrExp = explode('_', $className);
-		$tableName = strtolower($arrExp[1]);
+		$tableName = explode('\\', $className);
+		$tableName = end($tableName);
+		$tableName = str_replace('Table', '', $tableName);
+		$tableName = strtolower($tableName);
 		$this->table = $tableName;
 		
 		// обработка запроса, если нужно

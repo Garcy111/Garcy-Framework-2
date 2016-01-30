@@ -105,7 +105,7 @@ namespace App\core;
 						$page = $splits[0] . '/' . $splits[1];
 					}
 					$select = array("where" => "`page` = '$page'");
-					$obj = new \App\tables\Table_Cms($select);
+					$obj = new \App\tables\CmsTable($select);
 					$data = $obj->getOneRow();
 					if(!empty($data)) {
 						$this->_page = $data;

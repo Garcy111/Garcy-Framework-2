@@ -2,7 +2,7 @@
 namespace App\modules\adminpanel\models;
 
 use App\modules\adminpanel\core\Template;
-use App\tables\Table_Blog;
+use App\tables\BlogTable;
 use App\core\SearchClass;
 use App\core\ImageManager;
 
@@ -19,7 +19,7 @@ class Blog extends Main {
 	}
 
 	public static function saveArticle($title, $content) {
-		$obj = new Table_Blog();
+		$obj = new BlogTable();
 		$obj->fetchOne();
 		$obj->title = $title;
 		$article_prev = strip_tags($content);

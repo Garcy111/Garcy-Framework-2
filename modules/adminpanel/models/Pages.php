@@ -2,7 +2,7 @@
 namespace App\modules\adminpanel\models;
 
 use \App\modules\adminpanel\core\Template;
-use \App\tables\Table_Cms;
+use \App\tables\CmsTable;
 
 class Pages extends Main {
 
@@ -18,8 +18,8 @@ class Pages extends Main {
 	}
 
 	public function getPages() {
-		$select = array("where" => "`id` >= 1");
-		$obj = new Table_Cms($select);
+		$select = array("where" => "`type` >= 'static'");
+		$obj = new CmsTable($select);
 		$data = $obj->getAllRows();
 		if (empty($data)) return false;
 		rsort($data);

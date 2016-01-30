@@ -1,6 +1,6 @@
 <?php
 namespace App\tables;
-class Table_Blog extends \App\core\Model_DB {
+class BlogTable extends \App\core\Model_DB {
 
 	public $id;
 	#varchar(200)
