@@ -8,6 +8,7 @@
 	define('SMARTY_COMPILE', SITE_PATH.'views/templates_c/');
 	define('SMARTY_CONFIG', SITE_PATH.'views/congigs/');
 	define('SMARTY_CACHE', SITE_PATH.'views/cache/');
+	define('__CMS__', true); // Система управления струкурой сайта
 	define('__EMAIL__', 'email@email.com');
 
 	// Подключение к БД

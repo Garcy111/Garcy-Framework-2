@@ -5,6 +5,7 @@ namespace App\core;
 		private $_controller;
 		private $_action;
 		private $_params = array();
+		private $_page = array();
 		static $_instance;
 
 		public static function getInstance() {
@@ -93,6 +94,27 @@ namespace App\core;
 				}
 				$this->_params = array_combine($key, $val);
 			}
+
+			// Management system site structure
+			if(__CMS__) {
+				if($this->_module == 'IndexModule'
+					&& isset($splits[0])
+					&& !class_exists('\App\controllers\\' . $this->_controller)) {
+					$page = $splits[0];
+					if(isset($splits[1])) {
+						$page = $splits[0] . '/' . $splits[1];
+					}
+					$select = array("where" => "`page` = '$page'");
+					$obj = new \App\tables\Table_Cms($select);
+					$data = $obj->getOneRow();
+					if(!empty($data)) {
+						$this->_page = $data;
+						$this->_module = 'cms';
+						$this->_controller = 'IndexController';
+						$this->_action = 'indexAction';
+					}
+				}
+			}
 		}
 
 		public function route() {
@@ -140,6 +162,10 @@ namespace App\core;
 
 		public function getParams() {
 			return $this->_params;
+		}
+
+		public function getPage() {
+			return $this->_page;
 		}
 	}
 ?>

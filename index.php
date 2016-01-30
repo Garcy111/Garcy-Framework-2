@@ -11,11 +11,11 @@ require(SITE_PATH . 'core' . DS . 'Connecting_DB.php');
 
 try{
 // Запускаем маршрутизатор
-$frontObj = \App\core\FrontController::getInstance();
-	$frontObj->route();
+$app = \App\core\FrontController::getInstance();
+$app->route();
 // Отображаем страничку 404
 }catch (\App\core\E404Exception $e){
-	// echo $e->getMessage();
+	echo $e->getMessage();
 	$rc = new \ReflectionClass('\App\controllers\E404Controller');
 	$controller = $rc->newInstance();
 	$method = $rc->getMethod('indexAction');

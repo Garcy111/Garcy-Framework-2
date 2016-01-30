@@ -8,8 +8,6 @@ use App\core\ImageManager;
 
 class Blog extends Main {
 
-	// Параметры из url
-	private $params;
 	// Изображения из менеджера
 	private $imgs;
 
@@ -45,7 +43,7 @@ class Blog extends Main {
 
 	public function render() {
 		$smarty = new Template();
-		$smarty->assign('action', $this->_action);
+		$smarty->assign('controller', $this->_controller);
 		$smarty->assign('imgs', $this->imgs);
 		$smarty->display('adminpanel.tpl');
 	}

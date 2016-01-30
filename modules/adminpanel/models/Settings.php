@@ -11,7 +11,7 @@ class Settings extends Main {
 
 	public function render() {
 		$smarty = new Template();
-		$smarty->assign('action', $this->_action);
+		$smarty->assign('controller', $this->_controller);
 		$smarty->display('adminpanel.tpl');
 	}
 }
