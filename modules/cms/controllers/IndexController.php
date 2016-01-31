@@ -1,11 +1,18 @@
 <?php
 namespace App\modules\cms\controllers;
 
+use App\core\Controller;
 use App\modules\cms\models\_Static;
 use App\modules\cms\models\_Category;
 use App\modules\cms\models\_Entry;
 
-class IndexController implements \App\core\IController {
+class IndexController extends Controller {
+
+	public function __construct() {
+		$this->path_tpl = 'modules/cms/';
+		$this->folder_tpl = get_class();
+	}
+
 	public function indexAction() {
 		$app = \App\core\FrontController::getInstance();
 		$data = $app->getPage();
@@ -13,18 +20,15 @@ class IndexController implements \App\core\IController {
 
 		switch ($type) {
 			case 'static':
-				$model = new _Static();
-				$model->render();
+				$this->render('static');
 				break;
 
 			case 'category':
-				$model = new _Category();
-				$model->render();
+				$this->render('category');
 				break;
 
 			case 'entry':
-				$model = new _Entry();
-				$model->render();
+				$this->render('entry');
 				break;
 			
 			default:

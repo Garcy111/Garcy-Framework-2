@@ -88,3 +88,18 @@ $(function(){
 		});
 	});
 });
+
+// CMS Module
+$(function(){
+	$('#addStaticPage').click(function(){
+		var data = $('#dataFormAddPage').serialize();
+		$.ajax({
+			url: "/adminpanel/ajax/",
+			type: "POST",
+			data: data,
+			success: function() {
+				window.location.reload();
+			}
+		});
+	});
+});

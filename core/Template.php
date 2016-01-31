@@ -3,11 +3,11 @@ namespace App\core;
 
 	class Template extends \Smarty {
 
-		public function __construct() {
+		public function __construct($path, $folder) {
 			parent::__construct();
-			$this->template_dir = SMARTY_TEMPLATE;
-			$this->compile_dir = SMARTY_COMPILE;
-			$this->config_dir = SMARTY_CONFIG;
-			$this->cache_dir = SMARTY_CACHE;
+			$this->template_dir = SITE_PATH . $path . 'views/templates/' . $folder . '/';
+			$this->compile_dir = SITE_PATH . $path . 'views/templates_c/' . $folder . '/';
+			$this->config_dir = SITE_PATH . $path . 'views/congigs/' . $folder . '/';
+			$this->cache_dir = SITE_PATH . $path . 'views/cache/' . $folder . '/';
 		}
 	}

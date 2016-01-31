@@ -1,6 +1,8 @@
 <?php
 namespace App\controllers;
-class UploadController implements \App\core\IController {
+use App\core\Controller;
+
+class UploadController extends Controller {
 
 	// Upload resize img
 	public function indexAction() {

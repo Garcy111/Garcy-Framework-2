@@ -1,6 +1,9 @@
 <?php
 namespace App\controllers;
-class AjaxController implements \App\core\IController {
+use App\core\Controller;
+
+class AjaxController extends Controller {
+
 	function indexAction() {
 
 		$flag = !empty($_POST['flag'])?$_POST['flag']:false;

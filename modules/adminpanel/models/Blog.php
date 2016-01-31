@@ -1,7 +1,6 @@
 <?php
 namespace App\modules\adminpanel\models;
 
-use App\modules\adminpanel\core\Template;
 use App\tables\BlogTable;
 use App\core\SearchClass;
 use App\core\ImageManager;
@@ -9,7 +8,7 @@ use App\core\ImageManager;
 class Blog extends Main {
 
 	// Изображения из менеджера
-	private $imgs;
+	public $imgs;
 
 	public function __construct() {
 		parent::__construct();
@@ -39,12 +38,5 @@ class Blog extends Main {
 		$text = iconv_substr( $text, 0, $maxchar, 'utf-8' );
 		$text = preg_replace('@(.*)\s[^\s]*$@s', '\\1 ...', $text);
 			return $text;
-	}
-
-	public function render() {
-		$smarty = new Template();
-		$smarty->assign('controller', $this->_controller);
-		$smarty->assign('imgs', $this->imgs);
-		$smarty->display('adminpanel.tpl');
 	}
 }

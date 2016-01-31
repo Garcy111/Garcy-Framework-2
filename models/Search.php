@@ -8,11 +8,11 @@ use App\tables\BlogTable;
 class Search extends Main {
 
 	// Объект поиска //
-	private $searchObj = null;
+	public $searchObj = null;
 	// Индексированный запрос //
-	private $indexQuery = null;
+	public $indexQuery = null;
 	// Данные поиска //
-	private $dataSearch = false;
+	public $dataSearch = false;
 
 	public function __construct($query) {
 		parent::__construct();
@@ -54,11 +54,5 @@ class Search extends Main {
 		else {
 			return false;
 		}
-	}
-
-	public function render() {
-		$smarty = new Template();
-		$smarty->assign("search", $this->dataSearch);
-		$smarty->display('search.tpl');
 	}
 }

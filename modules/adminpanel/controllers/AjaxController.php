@@ -1,7 +1,8 @@
 <?php
 namespace App\modules\adminpanel\controllers;
+use \App\core\Controller;
 use \App\tables\AdminpanelTable;
-class AjaxController implements \App\core\IController {
+class AjaxController extends Controller {
 	
 	function indexAction() {
 
@@ -89,6 +90,13 @@ class AjaxController implements \App\core\IController {
 
 			print json_encode($response);
 			break;
+		// CMS Module
+		case 'addStaticPage':
+			$link = $_POST['link'];
+			$content = $_POST['content'];
+			$link_id = round(mt_rand(mt_rand(0, 10000), mt_rand(10000, 90000))*time()/1000000);
+			\App\modules\adminpanel\models\Pages::addStaticPage($link_id, $link, $content);
+		break;
 		default:
 			throw new \App\core\E404Exception('Not existing value POST parameter flag');
 			break;

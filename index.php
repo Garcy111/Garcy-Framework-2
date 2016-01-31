@@ -15,7 +15,7 @@ $app = \App\core\FrontController::getInstance();
 $app->route();
 // Отображаем страничку 404
 }catch (\App\core\E404Exception $e){
-	echo $e->getMessage();
+	// echo $e->getMessage();
 	$rc = new \ReflectionClass('\App\controllers\E404Controller');
 	$controller = $rc->newInstance();
 	$method = $rc->getMethod('indexAction');

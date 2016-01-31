@@ -1,11 +1,17 @@
 <?php
 namespace App\controllers;
 
+use App\core\Controller;
 use App\models\Index;
 
-class IndexController implements \App\core\IController {
+class IndexController extends Controller {
+
+	public function __construct() {
+		$this->folder_tpl = get_class();
+	}
+
 	public function indexAction() {
-		$index = new Index();
-		$index->render();
+		$model = new Index();
+		$this->render('index');
 	}
 }

@@ -100,11 +100,11 @@ namespace App\core;
 				if($this->_module == 'IndexModule'
 					&& isset($splits[0])
 					&& !class_exists('\App\controllers\\' . $this->_controller)) {
-					$page = $splits[0];
+					$link = $splits[0];
 					if(isset($splits[1])) {
-						$page = $splits[0] . '/' . $splits[1];
+						$link = $splits[0] . '/' . $splits[1];
 					}
-					$select = array("where" => "`page` = '$page'");
+					$select = array("where" => "`link` = '$link'");
 					$obj = new \App\tables\CmsTable($select);
 					$data = $obj->getOneRow();
 					if(!empty($data)) {

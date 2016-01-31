@@ -3,7 +3,7 @@ namespace App\models;
 
 class Main {
 
-	protected $_params;
+	public $_params;
 
 	public function __construct() {
 		$rc = \App\core\FrontController::getInstance();
