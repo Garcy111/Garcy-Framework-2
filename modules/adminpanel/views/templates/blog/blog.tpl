@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Админ панель</title>
+	<link rel="stylesheet" href="/public/styles/fonts.css" />
 	<link rel="stylesheet" href="/public/styles/adminpanel/adminpanel.css">
 	<script src="/public//libs/jquery/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="/public/libs/tinymce/tinymce.min.js"></script>

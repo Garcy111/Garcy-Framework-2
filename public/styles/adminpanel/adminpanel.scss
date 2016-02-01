@@ -7,6 +7,22 @@
   font-style: normal;
 }
 
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	color: #353535;
+}
+
+h1, h2, h3, h4 {
+	font-family: "RobotoBold", sans-serif;
+	color: #353535;
+}
+
+// Colors
+$roza:#D84363;
+$sky:#4FA2C8;
+$forest:#58BBA0;
+
 %box-shadow {
 	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
 	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
@@ -59,7 +75,7 @@ body {
 	@extend %box-shadow;
 	.logon {
 		margin: 0 20px;
-		font: 15pt Arial, sans-serif;
+		font-size: 15pt;
 		color: #FFF;
 		text-shadow: 1px 1px 1px #3E3E3E;
 		line-height: 50px;
@@ -112,7 +128,7 @@ body {
 			background: rgba(0,0,0,.3);
 			color: #DDDDDD;
 			text-align: center;
-			font: 17px Arial, sans-serif;
+			font-size: 17px;
 			text-shadow: 1px 1px 2px rgba(0,0,0,.7);
 			line-height: 42px;
 			text-decoration: none;
@@ -132,6 +148,7 @@ body {
 
 // CONTENT
 .content {
+	position: relative;
 	float: left;
 	width: 80%;
 	padding: 0 20px 20px 20px;
@@ -139,7 +156,7 @@ body {
 	background: rgba(0,0,0,.1);
 	@extend %box-sizing;
 	h1,h2,p,ul li,a {
-		font-family: Arial, sans-serif;
+		// font-family: Arial, sans-serif;
 		padding: 0;
 		margin: 0;
 		color: #EDEDED;
@@ -179,7 +196,6 @@ body {
 		}
 		#status {
 			display: block;
-			font-family: Arial, sans-serif;
 			padding: 5px;
 			margin: 5px 0;
 		}
@@ -253,4 +269,104 @@ body {
 .btn {
   margin: 10px 0;
   height: 30px;
+}
+
+// Static pages
+
+.pages {
+	margin-top: 10px;
+	padding: 5px 10px;
+	border: 1px solid #564551;
+	.page {
+		position: relative;
+		height: 60px;
+		margin: 10px 0;
+		border: 1px solid #5E4F5A;
+		background: #6E5C68;
+		h3 {
+			margin: 0 0 0 20px;
+			color: #FFFFFF;
+			line-height: 60px;
+		}
+		.delStaticPage, .editStaticPage {
+			position: absolute;
+			top: 11px;
+			width: 44px;
+			height: 38px;
+			color: #FFFFFF;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			border-radius: 1px;
+			font-size: 21px;
+			text-shadow: 0 1px 3px #313131;
+			text-align: center;
+		}
+		.delStaticPage {
+			right: 20px;
+			background: $roza;
+			transition: all .3s;
+			&:hover {
+				color: darken(#FFF, 3%);
+				background: darken($roza, 3%);
+			}
+			&:active {
+				padding-top: 3px;
+				color: darken(#FFF, 6%);
+				background: darken($roza, 6%);
+			}
+		}
+		.editStaticPage {
+			right: 80px;
+			background: $sky;
+			&:hover {
+				color: darken(#FFF, 3%);
+				background: darken($sky, 3%);
+			}
+			&:active {
+				padding-top: 3px;
+				color: darken(#FFF, 6%);
+				background: darken($sky, 6%);
+			}
+		}
+	}
+}
+
+.addStaticPage {
+	height: 38px;
+	margin: 20px 0 0 10px;
+	padding: 0 10px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 1px;
+	color: #FFF;
+	font-size: 16px;
+	background: $forest;
+	transition: all .3s;
+	i {
+		margin: 0 10px 0 0;
+	}
+	&:hover {
+		color: darken(#FFF, 5%);
+		background: darken($forest, 5%);
+	}
+	&:active {
+		padding-top: 2px;
+		color: darken(#FFF, 8%);
+		background: darken($forest, 8%);
+	}
+}
+
+.searchStaticPage {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	height: 38px;
+	width: 180px;
+	padding: 0 8px;
+	margin: 0;
+	outline: none;
+	border: none;
+	border-radius: 1px;
 }

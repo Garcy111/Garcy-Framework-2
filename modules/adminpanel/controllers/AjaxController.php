@@ -103,6 +103,10 @@ class AjaxController extends Controller {
 			$content = $_POST['content'];
 			\App\modules\adminpanel\models\Pages::editStaticPage($page_id, $link, $content);
 		break;
+		case 'delStaticPage':
+			$page_id = $_POST['page_id'];
+			\App\modules\adminpanel\models\Pages::delStaticPage($page_id);
+		break;
 		default:
 			throw new \App\core\E404Exception('Not existing value POST parameter flag');
 			break;

@@ -37,6 +37,17 @@ class Pages extends Main {
 		$tableCms_static->update();
 	}
 
+	public static function delStaticPage($page_id) {
+		$page_id = intval($page_id);
+		$select = array("where" => "`page_id` = $page_id");
+		$tableCms = new \App\tables\CmsTable($select);
+		$tableCms->fetchOne();
+		$tableCms->deleteRow();
+		$tableCms_static = new Cms_staticTable($select);
+		$tableCms_static->fetchOne();
+		$tableCms_static->deleteRow();
+	}
+
 	public function getPages() {
 		$select = array("where" => "`type` >= 'static'");
 		$obj = new CmsTable($select);

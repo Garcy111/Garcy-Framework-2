@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-01 01:57:51
+<?php /* Smarty version 3.1.27, created on 2016-02-02 00:49:49
          compiled from "C:\OpenServer\domains\localhost\modules\adminpanel\views\templates\blog\blog.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:329256ae916f17e823_76298755%%*/
+/*%%SmartyHeaderCode:250856afd2fd407361_89731635%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,30 +9,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fc6a262e522a00da39ffd980dccc43337cec4949' => 
     array (
       0 => 'C:\\OpenServer\\domains\\localhost\\modules\\adminpanel\\views\\templates\\blog\\blog.tpl',
-      1 => 1454281070,
+      1 => 1454363354,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '329256ae916f17e823_76298755',
+  'nocache_hash' => '250856afd2fd407361_89731635',
   'variables' => 
   array (
     'imgs' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ae916f37c6e3_54421181',
+  'unifunc' => 'content_56afd2fd55e077_18208301',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ae916f37c6e3_54421181')) {
-function content_56ae916f37c6e3_54421181 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56afd2fd55e077_18208301')) {
+function content_56afd2fd55e077_18208301 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '329256ae916f17e823_76298755';
+$_smarty_tpl->properties['nocache_hash'] = '250856afd2fd407361_89731635';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Админ панель</title>
+	<link rel="stylesheet" href="/public/styles/fonts.css" />
 	<link rel="stylesheet" href="/public/styles/adminpanel/adminpanel.css">
 	<?php echo '<script'; ?>
  src="/public//libs/jquery/jquery-2.1.1.min.js"><?php echo '</script'; ?>

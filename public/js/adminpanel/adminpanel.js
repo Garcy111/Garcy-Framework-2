@@ -116,4 +116,16 @@ $(function(){
 			}
 		});
 	});
+
+	$('.delStaticPage').click(function(){
+		var page_id = $(this).attr('id');
+		$.ajax({
+			url: "/adminpanel/ajax/",
+			type: "POST",
+			data: {flag: "delStaticPage", page_id: page_id},
+			success: function(){
+				window.location.reload();
+			}
+		});
+	});
 });
