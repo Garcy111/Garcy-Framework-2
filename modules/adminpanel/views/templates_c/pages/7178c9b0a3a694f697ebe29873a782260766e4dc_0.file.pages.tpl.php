@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-01 00:53:54
+<?php /* Smarty version 3.1.27, created on 2016-02-01 13:28:38
          compiled from "C:\OpenServer\domains\localhost\modules\adminpanel\views\templates\pages\pages.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2984756ae827238a133_04547338%%*/
+/*%%SmartyHeaderCode:51056af3356a68463_31338230%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7178c9b0a3a694f697ebe29873a782260766e4dc' => 
     array (
       0 => 'C:\\OpenServer\\domains\\localhost\\modules\\adminpanel\\views\\templates\\pages\\pages.tpl',
-      1 => 1454277234,
+      1 => 1454322460,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2984756ae827238a133_04547338',
+  'nocache_hash' => '51056af3356a68463_31338230',
   'variables' => 
   array (
     'pages' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ae8272597766_20952995',
+  'unifunc' => 'content_56af3356c219d5_11419673',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ae8272597766_20952995')) {
-function content_56ae8272597766_20952995 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56af3356c219d5_11419673')) {
+function content_56af3356c219d5_11419673 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2984756ae827238a133_04547338';
+$_smarty_tpl->properties['nocache_hash'] = '51056af3356a68463_31338230';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -86,7 +86,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['page']['last']       = ($_sm
 ?>
 				<p><?php echo $_smarty_tpl->tpl_vars['pages']->value[$_smarty_tpl->getVariable('smarty')->value['section']['page']['index']]['link'];?>
 </p>
-				<a href="/adminpanel/pages/edit=<?php echo $_smarty_tpl->tpl_vars['pages']->value[$_smarty_tpl->getVariable('smarty')->value['section']['page']['index']]['link_id'];?>
+				<a href="/adminpanel/pages/edit=<?php echo $_smarty_tpl->tpl_vars['pages']->value[$_smarty_tpl->getVariable('smarty')->value['section']['page']['index']]['page_id'];?>
 ">
 					<button>Редактировать</button>
 				</a>

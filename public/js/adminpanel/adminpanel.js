@@ -103,3 +103,17 @@ $(function(){
 		});
 	});
 });
+
+$(function(){
+	$('#editStaticPage').click(function(){
+		var data = $('#dataFormEditPage').serialize();
+		$.ajax({
+			url: "/adminpanel/ajax/",
+			type: "POST",
+			data: data,
+			success: function(){
+				window.location.reload();
+			}
+		});
+	});
+});

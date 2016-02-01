@@ -90,7 +90,7 @@ namespace App\core;
 						$key[] .= $param[0];
 						$val[] .= $param[1];
 					}
-					else throw new NotFoundPageException('Not valid parameter');
+					else throw new E404Exception('Not valid parameter');
 				}
 				$this->_params = array_combine($key, $val);
 			}

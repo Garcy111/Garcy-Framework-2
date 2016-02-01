@@ -24,7 +24,7 @@
 			</a>
 			{section name=page loop=$pages}
 				<p>{$pages[page]['link']}</p>
-				<a href="/adminpanel/pages/edit={$pages[page]['link_id']}">
+				<a href="/adminpanel/pages/edit={$pages[page]['page_id']}">
 					<button>Редактировать</button>
 				</a>
 			{/section}

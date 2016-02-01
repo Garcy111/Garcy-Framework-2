@@ -21,8 +21,9 @@
 			<h1>Редактировать страницу</h1>
 			<form id="dataFormEditPage">
 				<input type="hidden" name="flag" value="editStaticPage">
-				<input type="text" name="link">
-				<textarea name="content"></textarea>
+				<input type="hidden" name="page_id" value="{$page['page_id']}">
+				<input type="text" name="link" value="{$page['link']}">
+				<textarea name="content">{$page['content']}</textarea>
 			</form>
 			<button id="editStaticPage">Сохранить</button>
 	    </div>

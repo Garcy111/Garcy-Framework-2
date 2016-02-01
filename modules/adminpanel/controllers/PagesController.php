@@ -22,9 +22,10 @@ class PagesController extends Controller {
 				$this->render('add', array('controller' => $controller));
 			}
 			if(!empty($edit)) {
-				$this->render('edit', array('controller' => $controller));
+				$data = $model->getPage($edit);
+				$this->render('edit', array('controller' => $controller, 'page' => $data));
 			}
-			if(!$add && !$edit) {
+			if($add != 'page' && !$edit) {
 				$pages = $model->getPages();
 				$this->render('pages', array(
 					'pages' => $pages,

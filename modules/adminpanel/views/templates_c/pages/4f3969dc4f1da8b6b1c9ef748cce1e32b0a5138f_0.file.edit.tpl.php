@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-01 00:56:05
+<?php /* Smarty version 3.1.27, created on 2016-02-01 13:44:16
          compiled from "C:\OpenServer\domains\localhost\modules\adminpanel\views\templates\pages\edit.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1351656ae82f60019e4_41910001%%*/
+/*%%SmartyHeaderCode:2507756af3700745135_06737458%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4f3969dc4f1da8b6b1c9ef748cce1e32b0a5138f' => 
     array (
       0 => 'C:\\OpenServer\\domains\\localhost\\modules\\adminpanel\\views\\templates\\pages\\edit.tpl',
-      1 => 1454277361,
+      1 => 1454323455,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1351656ae82f60019e4_41910001',
+  'nocache_hash' => '2507756af3700745135_06737458',
+  'variables' => 
+  array (
+    'page' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ae82f6116019_69937454',
+  'unifunc' => 'content_56af3700948040_65398964',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ae82f6116019_69937454')) {
-function content_56ae82f6116019_69937454 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56af3700948040_65398964')) {
+function content_56af3700948040_65398964 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1351656ae82f60019e4_41910001';
+$_smarty_tpl->properties['nocache_hash'] = '2507756af3700745135_06737458';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -55,8 +59,12 @@ $_smarty_tpl->properties['nocache_hash'] = '1351656ae82f60019e4_41910001';
 			<h1>Редактировать страницу</h1>
 			<form id="dataFormEditPage">
 				<input type="hidden" name="flag" value="editStaticPage">
-				<input type="text" name="link">
-				<textarea name="content"></textarea>
+				<input type="hidden" name="page_id" value="<?php echo $_smarty_tpl->tpl_vars['page']->value['page_id'];?>
+">
+				<input type="text" name="link" value="<?php echo $_smarty_tpl->tpl_vars['page']->value['link'];?>
+">
+				<textarea name="content"><?php echo $_smarty_tpl->tpl_vars['page']->value['content'];?>
+</textarea>
 			</form>
 			<button id="editStaticPage">Сохранить</button>
 	    </div>
