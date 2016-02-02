@@ -1,4 +1,28 @@
 // Main
+*::-webkit-input-placeholder {
+	font-size: 13pt;
+	color: #808080;
+	font-style: italic;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	font-size: 13pt;
+	color: #808080;
+	font-style: italic;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	font-size: 13pt;
+	color: #808080;
+	font-style: italic;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	font-size: 13pt;
+	color: #808080;
+	font-style: italic;
+	opacity: 1;
+}
 
 @font-face {
   font-family: 'icomoon';
@@ -161,9 +185,9 @@ body {
 		margin: 0;
 		color: #EDEDED;
 	}
-	h1 {
+	.title {
 		font-size: 16pt;
-		line-height: 40px;
+		margin: 10px 0 0 0;
 	}
 	textarea {
 		display: block;
@@ -283,10 +307,15 @@ body {
 		margin: 10px 0;
 		border: 1px solid #5E4F5A;
 		background: #6E5C68;
-		h3 {
-			margin: 0 0 0 20px;
+		.link {
+			margin: 0 0 0 25px;
 			color: #FFFFFF;
 			line-height: 60px;
+			text-decoration: none;
+			font-size: 14pt;
+			&:hover {
+				border-bottom: 2px solid #fff;
+			}
 		}
 		.delStaticPage, .editStaticPage {
 			position: absolute;
@@ -345,6 +374,7 @@ body {
 	background: $forest;
 	transition: all .3s;
 	i {
+		font-size: 18px;
 		margin: 0 10px 0 0;
 	}
 	&:hover {
@@ -366,7 +396,20 @@ body {
 	width: 180px;
 	padding: 0 8px;
 	margin: 0;
+	font-size: 13pt;
 	outline: none;
 	border: none;
 	border-radius: 1px;
+}
+
+// Add static page
+.urlInput {
+	width: 100%;
+	height: 35px;
+	padding: 0 8px;
+	margin: 10px 0;
+	font-size: 14pt;
+	border: none;
+	border-radius: 1px;
+	@extend %box-sizing;
 }

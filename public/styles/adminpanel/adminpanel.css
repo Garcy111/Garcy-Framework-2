@@ -1,3 +1,31 @@
+*::-webkit-input-placeholder {
+  font-size: 13pt;
+  color: #808080;
+  font-style: italic;
+  opacity: 1;
+}
+
+*:-moz-placeholder {
+  font-size: 13pt;
+  color: #808080;
+  font-style: italic;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  font-size: 13pt;
+  color: #808080;
+  font-style: italic;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  font-size: 13pt;
+  color: #808080;
+  font-style: italic;
+  opacity: 1;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("/public/fonts/icomoon.ttf") format("truetype");
@@ -21,7 +49,7 @@ h1, h2, h3, h4 {
   -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
-.content, .content #nameArticle, .content .img-manager #sourse {
+.content, .content #nameArticle, .content .img-manager #sourse, .urlInput {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -148,9 +176,9 @@ body {
   margin: 0;
   color: #EDEDED;
 }
-.content h1 {
+.content .title {
   font-size: 16pt;
-  line-height: 40px;
+  margin: 10px 0 0 0;
 }
 .content textarea {
   display: block;
@@ -264,10 +292,15 @@ body {
   border: 1px solid #5E4F5A;
   background: #6E5C68;
 }
-.pages .page h3 {
-  margin: 0 0 0 20px;
+.pages .page .link {
+  margin: 0 0 0 25px;
   color: #FFFFFF;
   line-height: 60px;
+  text-decoration: none;
+  font-size: 14pt;
+}
+.pages .page .link:hover {
+  border-bottom: 2px solid #fff;
 }
 .pages .page .delStaticPage, .pages .page .editStaticPage {
   position: absolute;
@@ -325,6 +358,7 @@ body {
   transition: all .3s;
 }
 .addStaticPage i {
+  font-size: 18px;
   margin: 0 10px 0 0;
 }
 .addStaticPage:hover {
@@ -345,7 +379,18 @@ body {
   width: 180px;
   padding: 0 8px;
   margin: 0;
+  font-size: 13pt;
   outline: none;
+  border: none;
+  border-radius: 1px;
+}
+
+.urlInput {
+  width: 100%;
+  height: 35px;
+  padding: 0 8px;
+  margin: 10px 0;
+  font-size: 14pt;
   border: none;
   border-radius: 1px;
 }

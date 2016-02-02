@@ -12,7 +12,7 @@ $(function(){
 // tinymce plugin
 tinymce.init({
 mode : "exact",
-elements: 'contentArticle',
+elements: 'contentArticle, staticPage',
 theme: 'modern',
 height: 300,
 convert_urls : false,

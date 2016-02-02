@@ -19,7 +19,7 @@
 	<div class="wrapper">
 	{include file='../includes/nav.tpl'}
 	    <div class="content">
-			<h1>Редактировать страницу</h1>
+			<h1 class="title">Редактировать страницу</h1>
 			<form id="dataFormEditPage">
 				<input type="hidden" name="flag" value="editStaticPage">
 				<input type="hidden" name="page_id" value="{$page['page_id']}">

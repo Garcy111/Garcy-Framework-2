@@ -20,7 +20,7 @@
 	  {include file='../includes/nav.tpl'}
 	  
 	    <div class="content">
-		   <h1>Новая статья</h1>
+		   <h1 class="title">Новая статья</h1>
 			<form action="/adminpanel/ajax/" method="POST">
 				<input type="hidden" name="flag" value="saveArticle">
 				<input type="text" name="title" id="nameArticle" placeholder="Заголовок">
@@ -28,7 +28,7 @@
 				<button class="btn" type="submit">Сохранить</button>
 			</form>
 
-			<h1>Менеджер изображений</h1>
+			<h1 class="title">Менеджер изображений</h1>
 			<script src="/public/libs/ajaxupload/ajaxupload.3.5.js"></script>
 			<script src="/public/js/upload-img.js"></script>
 			<div class="img-manager">

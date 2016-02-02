@@ -27,9 +27,9 @@
 			<div class="pages">
 			{section name=page loop=$pages}
 				<div class="page">
-					<h3 class="link">{$pages[page]['link']}</h3>
-					<a href="/adminpanel/pages/edit={$pages[page]['page_id']}">
-						<button class="editStaticPage"><i class="fa fa-pencil-square-o"></i></button>
+					<a href="/adminpanel/pages/edit={$pages[page]['page_id']}" class="link">{$pages[page]['link']}</a>
+					<a href="/{$pages[page]['link']}/" target="__blank">
+						<button class="editStaticPage"><i class="fa fa-eye"></i></button>
 					</a>
 					<button class="delStaticPage" id="{$pages[page]['page_id']}"><i class="fa fa-trash"></i></button>
 				</div>

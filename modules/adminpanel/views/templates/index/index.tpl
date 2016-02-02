@@ -20,7 +20,7 @@
 	 {include file='../includes/nav.tpl'}
 	  
 	    <div class="content">
-		   <h1>Главная страница</h1>
+		   <h1 class="title">Главная страница</h1>
 	    </div>
 	   </div>
 	   </div>

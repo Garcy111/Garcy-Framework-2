@@ -100,10 +100,7 @@ namespace App\core;
 				if($this->_module == 'IndexModule'
 					&& isset($splits[0])
 					&& !class_exists('\App\controllers\\' . $this->_controller)) {
-					$link = $splits[0];
-					if(isset($splits[1])) {
-						$link = $splits[0] . '/' . $splits[1];
-					}
+					$link = implode('/', $splits);
 					$select = array("where" => "`link` = '$link'");
 					$obj = new \App\tables\CmsTable($select);
 					$data = $obj->getOneRow();
