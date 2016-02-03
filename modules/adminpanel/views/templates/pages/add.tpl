@@ -22,12 +22,12 @@
 	    <div class="content">
 			<h1 class="title">Новая страница</h1>
 			<form id="dataFormAddPage">
+				<div class="icon-help"><i class="fa fa-question-circle"></i></div>
 				<input type="hidden" name="flag" value="addStaticPage">
-				<input type="text" name="link" class="urlInput" placeholder="Адрес страницы">
+				<input type="text" name="link" class="urlInput" onchange="validUrl()" placeholder="Адрес страницы">
 				<textarea name="content" id="staticPage"></textarea>
 			</form>
 			<button id="addStaticPage" class="addStaticPage"><i class="fa fa-plus-circle"></i>Добавить</button>
-			<!-- <button id="addStaticPage">Добавить</button> -->
 	    </div>
 	   </div>
 	   </div>

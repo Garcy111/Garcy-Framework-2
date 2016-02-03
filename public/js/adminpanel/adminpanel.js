@@ -97,12 +97,31 @@ $(function(){
 			url: "/adminpanel/ajax/",
 			type: "POST",
 			data: data,
-			success: function() {
-				window.location.reload();
+			dataType: 'json',
+			success: function(data) {
+				if (data['status'] == 'success') {
+					$('.urlInput').css({background: '#FFFFFF'});
+					window.location.reload();
+				}
+				else {
+					$('.urlInput').css({background: '#F5D4D4'});
+				}
 			}
 		});
 	});
 });
+
+function validUrl(){
+	var input = $('.urlInput').val();
+	var re = /[^\d\w]+/;
+	var result = re.test(input);
+	if (!result) {
+		$('.urlInput').css({background: '#FFFFFF'});
+	}
+	else {
+		$('.urlInput').css({background: '#F5D4D4'});
+	}
+}
 
 $(function(){
 	$('#editStaticPage').click(function(){

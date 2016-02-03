@@ -344,6 +344,18 @@ body {
   background: #3b94bd;
 }
 
+#dataFormAddPage {
+  position: relative;
+}
+#dataFormAddPage .icon-help {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #8A76AC;
+}
+
 .addStaticPage {
   height: 38px;
   margin: 20px 0 0 10px;

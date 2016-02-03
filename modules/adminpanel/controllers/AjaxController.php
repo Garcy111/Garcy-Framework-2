@@ -94,8 +94,15 @@ class AjaxController extends Controller {
 		case 'addStaticPage':
 			$link = $_POST['link'];
 			$content = $_POST['content'];
+			$response = array("status" => "success");
+			if(!preg_match("/^[a-zA-Z]+[a-zA-Z0-9]*$/", $link)) {
+				$response["status"] = "error";
+			}
 			$page_id = round(mt_rand(mt_rand(0, 10000), mt_rand(10000, 90000))*time()/1000000);
-			\App\modules\adminpanel\models\Pages::addStaticPage($page_id, $link, $content);
+			if($response["status"] == "success") {
+				\App\modules\adminpanel\models\Pages::addStaticPage($page_id, $link, $content);
+			}
+			print json_encode($response);
 		break;
 		case 'editStaticPage':
 			$page_id = $_POST['page_id'];

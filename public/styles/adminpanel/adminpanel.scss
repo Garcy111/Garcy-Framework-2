@@ -43,6 +43,7 @@ h1, h2, h3, h4 {
 }
 
 // Colors
+$purple:#8A76AC;
 $roza:#D84363;
 $sky:#4FA2C8;
 $forest:#58BBA0;
@@ -163,9 +164,9 @@ body {
 		}
 	}
 	.click a {
-		background: #8A76AC;
+		background: $purple;
 		&:hover {
-			background: #8A76AC;
+			background: $purple;
 		}
 	}
 }
@@ -244,7 +245,7 @@ body {
 				border-radius: 5px;
 			}
 			&:hover {
-				border: 3px solid #8A76AC;
+				border: 3px solid $purple;
 			}
 			button {
 				display: block;
@@ -358,6 +359,18 @@ body {
 				background: darken($sky, 6%);
 			}
 		}
+	}
+}
+
+#dataFormAddPage {
+	position: relative;
+	.icon-help {
+		position: absolute;
+		right: 20px;
+		top: 12px;
+		font-size: 22px;
+		cursor: pointer;
+		color: $purple;
 	}
 }
 
