@@ -6,6 +6,9 @@ use App\modules\cms\models\_Static;
 use App\modules\cms\models\_Category;
 use App\modules\cms\models\_Entry;
 
+use App\tables\CmsTable;
+use App\tables\Cms_staticTable;
+
 class IndexController extends Controller {
 
 	public function __construct() {
@@ -20,7 +23,12 @@ class IndexController extends Controller {
 
 		switch ($type) {
 			case 'static':
-				$this->render('static');
+				$page_id = $data['page_id'];
+				$page_id = intval($page_id);
+				$select = array("where" => "`page_id` = $page_id");
+				$table = new Cms_staticTable($select);
+				$page = $table->getOneRow();
+				$this->render('static', array('page' => $page));
 				break;
 
 			case 'category':

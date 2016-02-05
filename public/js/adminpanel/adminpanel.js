@@ -40,26 +40,6 @@ $(function(){
 	});
 });
 
-// Imgs manager
-$(function(){
-	$('.img-prev img').click(function() {
-		var img = $(this).attr('alt');
-		$('#sourse').val('/public/uploads/' + img);
-	});
-
-	$('.img-prev button').click(function() {
-		var img = $(this).attr('data-img');
-		$.ajax({
-			url: "/adminpanel/ajax/",
-			type: "POST",
-			data: {flag: "delImg", img: img},
-			success: function() {
-				window.location.reload();
-			}
-		});
-	});
-});
-
 $(function(){
 	$("#changeAuthData").click(function() {
 		var data = $("#changeAuthDataForm").serialize();
@@ -92,16 +72,35 @@ $(function(){
 // CMS Module
 $(function(){
 	$('#addStaticPage').click(function(){
-		var data = $('#dataFormAddPage').serialize();
+		var link = $('.urlInput').val();
 		$.ajax({
 			url: "/adminpanel/ajax/",
 			type: "POST",
-			data: data,
+			data: {flag: "validLink", link: link},
 			dataType: 'json',
 			success: function(data) {
 				if (data['status'] == 'success') {
 					$('.urlInput').css({background: '#FFFFFF'});
-					window.location.reload();
+					$('#dataFormAddPage').submit();
+				}
+				else {
+					$('.urlInput').css({background: '#F5D4D4'});
+				}
+			}
+		});
+	});
+
+	$('#editStaticPage').click(function(){
+		var link = $('.urlInput').val();
+		$.ajax({
+			url: "/adminpanel/ajax/",
+			type: "POST",
+			data: {flag: "validLink", link: link},
+			dataType: 'json',
+			success: function(data) {
+				if (data['status'] == 'success') {
+					$('.urlInput').css({background: '#FFFFFF'});
+					$('#dataFormEditPage').submit();
 				}
 				else {
 					$('.urlInput').css({background: '#F5D4D4'});
@@ -115,7 +114,7 @@ function validUrl(){
 	var input = $('.urlInput').val();
 	var re = /[^\d\w]+/;
 	var result = re.test(input);
-	if (!result) {
+	if (!result && input.length <= 100) {
 		$('.urlInput').css({background: '#FFFFFF'});
 	}
 	else {
@@ -124,16 +123,10 @@ function validUrl(){
 }
 
 $(function(){
-	$('#editStaticPage').click(function(){
-		var data = $('#dataFormEditPage').serialize();
-		$.ajax({
-			url: "/adminpanel/ajax/",
-			type: "POST",
-			data: data,
-			success: function(){
-				window.location.reload();
-			}
-		});
+
+	$('.delStaticPageBtn').click(function(){
+		var id = $(this).attr('id');
+		$('#delModal_' + id).arcticmodal();
 	});
 
 	$('.delStaticPage').click(function(){
@@ -146,5 +139,13 @@ $(function(){
 				window.location.reload();
 			}
 		});
+	});
+
+	$('.icon-help').click(function(){
+		$('#help').arcticmodal();
+	});
+
+	$('.mi-btn').click(function(){
+		$('#mi-modal').arcticmodal();
 	});
 });

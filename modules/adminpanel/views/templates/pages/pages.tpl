@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="/public/styles/adminpanel/adminpanel.css">
 	<link rel="stylesheet" href="/public/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<script src="/public/libs/jquery/jquery-2.1.1.min.js"></script>
+	<!-- arcticModal -->
+	<script src="/public/libs/arcticmodal/jquery.arcticmodal-0.3.min.js"></script>
+	<link rel="stylesheet" href="/public/libs/arcticmodal/jquery.arcticmodal-0.3.css">
+	<!-- arcticModal theme -->
+	<link rel="stylesheet" href="/public/libs/arcticmodal/themes/ap.css">
 	<script type="text/javascript" src="/public/libs/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript" src="/public/js/adminpanel/adminpanel.js"></script>
 </head>
@@ -29,9 +34,20 @@
 				<div class="page">
 					<a href="/adminpanel/pages/edit={$pages[page]['page_id']}" class="link">{$pages[page]['link']}</a>
 					<a href="/{$pages[page]['link']}/" target="__blank">
-						<button class="editStaticPage"><i class="fa fa-eye"></i></button>
+						<button class="viewStaticPage"><i class="fa fa-eye"></i></button>
 					</a>
-					<button class="delStaticPage" id="{$pages[page]['page_id']}"><i class="fa fa-trash"></i></button>
+					<button class="delStaticPageBtn" id="{$pages[page]['page_id']}"><i class="fa fa-trash"></i></button>
+					<div style="display: none;">
+						<div class="box-modal" id="delModal_{$pages[page]['page_id']}">
+						<h3 class="title_modal">Вы уверены что хотите удалить страницу "{$pages[page]['link']}" ?</h3>
+							<div class="btns-modal">
+								<button class="delStaticPage" id="{$pages[page]['page_id']}">Да</button>
+								<div class="arcticmodal-close cancel-modal">
+									<button>Отмена</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			{/section}
 			</div>

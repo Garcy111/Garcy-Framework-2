@@ -203,11 +203,22 @@ body {
 		outline: none;
 		@extend %box-sizing;
 	}
-	/*Img manager*/
+}
+
+.box-modal {
+	width: 900px;
+}
+
+/*Img manager*/
+.mi-title {
+	font-size: 20px;
+	color: #E9E9E9;
+	text-align: center;
+}
 	.img-manager {
 		overflow: hidden;
-		border: 1px solid rgba(200,200,200,.4);
-		padding: 20px;
+		width: 840px;
+		padding: 5px;
 		p {
 			margin: 0 0 5px 0;
 		}
@@ -227,11 +238,12 @@ body {
 		#sourse {
 			display: block;
 			width: 100%;
-			height: 30px;
-			padding: 0 10px;
+			height: 36px;
+			padding: 0 8px;
 			margin: 0 0 10px 0;
+			font-size: 13pt;
 			outline: none;
-			border: 1px solid #785A80;
+			border: none;
 			@extend %box-sizing;
 		}
 		.img-prev {
@@ -254,7 +266,6 @@ body {
 			}
 		}
 	}
-}
 
 .settings {
 	position: absolute;
@@ -318,7 +329,7 @@ body {
 				border-bottom: 2px solid #fff;
 			}
 		}
-		.delStaticPage, .editStaticPage {
+		.delStaticPageBtn, .viewStaticPage {
 			position: absolute;
 			top: 11px;
 			width: 44px;
@@ -332,7 +343,7 @@ body {
 			text-shadow: 0 1px 3px #313131;
 			text-align: center;
 		}
-		.delStaticPage {
+		.delStaticPageBtn {
 			right: 20px;
 			background: $roza;
 			transition: all .3s;
@@ -346,7 +357,7 @@ body {
 				background: darken($roza, 6%);
 			}
 		}
-		.editStaticPage {
+		.viewStaticPage {
 			right: 80px;
 			background: $sky;
 			&:hover {
@@ -362,15 +373,18 @@ body {
 	}
 }
 
-#dataFormAddPage {
+#dataFormAddPage, #dataFormEditPage {
 	position: relative;
 	.icon-help {
 		position: absolute;
-		right: 20px;
+		left: 390px;
 		top: 12px;
 		font-size: 22px;
 		cursor: pointer;
 		color: $purple;
+		&:hover {
+			color: darken($purple, 5%);
+		}
 	}
 }
 
@@ -401,6 +415,29 @@ body {
 	}
 }
 
+#editStaticPage {
+	height: 38px;
+	margin: 20px 0 0 10px;
+	padding: 0 10px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 1px;
+	color: #FFF;
+	font-size: 16px;
+	background: $sky;
+	transition: all .3s;
+	&:hover {
+		color: darken(#FFF, 3%);
+		background: darken($sky, 3%);
+	}
+	&:active {
+		padding-top: 2px;
+		color: darken(#FFF, 6%);
+		background: darken($sky, 6%);
+	}
+}
+
 .searchStaticPage {
 	position: absolute;
 	top: 20px;
@@ -417,7 +454,7 @@ body {
 
 // Add static page
 .urlInput {
-	width: 100%;
+	width: 420px;
 	height: 35px;
 	padding: 0 8px;
 	margin: 10px 0;
@@ -425,4 +462,99 @@ body {
 	border: none;
 	border-radius: 1px;
 	@extend %box-sizing;
+}
+
+.titleInput {
+	width: 420px;
+	height: 35px;
+	padding: 0 8px;
+	margin: 10px 0;
+	font-size: 14pt;
+	border: none;
+	border-radius: 1px;
+	@extend %box-sizing;
+}
+
+.mi-btn {
+	position: absolute;
+	right: 20px;
+	top: 48px;
+	z-index: 1000;
+	width: 72px;
+	height: 35px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 1px;
+	color: #FFF;
+	font-size: 20px;
+	background: $sky;
+	transition: all .2s;
+	&:hover {
+		color: darken(#FFF, 3%);
+		background: darken($sky, 3%);
+	}
+	&:active {
+		padding-top: 2px;
+		color: darken(#FFF, 6%);
+		background: darken($sky, 6%);
+	}
+}
+
+// Modal
+
+.title_modal {
+	color: #EEEEEE;
+	text-align: center;
+}
+
+.btns-modal {
+	width: 175px;
+	height: 34px;
+	margin: 0 auto;
+}
+
+.delStaticPage {
+	width: 70px;
+	height: 34px;
+	margin-right: 10px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-radius: 1px;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: $roza;
+	&:hover {
+		color: darken(#FFF, 3%);
+		background: darken($roza, 3%);
+	}
+	&:active {
+		color: darken(#FFF, 6%);
+		background: darken($roza, 6%);
+	}
+}
+
+.cancel-modal {
+	display: inline-block;
+	width: 90px;
+	button {
+		width: 90px;
+		height: 34px;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		border-radius: 1px;
+		font-size: 16px;
+		color: #FFFFFF;
+		background: $sky;
+		&:hover {
+			color: darken(#FFF, 3%);
+			background: darken($sky, 3%);
+		}
+		&:active {
+			color: darken(#FFF, 6%);
+			background: darken($sky, 6%);
+		}
+	}
 }

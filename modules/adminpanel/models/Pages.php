@@ -11,7 +11,7 @@ class Pages extends Main {
 		parent::__construct();
 	}
 
-	public static function addStaticPage($page_id, $link, $content) {
+	public static function addStaticPage($page_id, $title, $link, $content) {
 		$cms = new \App\tables\CmsTable();
 		$cms->fetchOne();
 		$cms->page_id = $page_id;
@@ -20,11 +20,12 @@ class Pages extends Main {
 		$cms->save();
 		$cms_static = new \App\tables\Cms_staticTable();
 		$cms_static->page_id = $page_id;
+		$cms_static->title = $title;
 		$cms_static->content = $content;
 		$cms_static->save();
 	}
 
-	public static function editStaticPage($page_id, $link, $content) {
+	public static function editStaticPage($page_id, $title, $link, $content) {
 		$page_id = intval($page_id);
 		$select = array("where" => "`page_id` = $page_id");
 		$tableCms = new \App\tables\CmsTable($select);
@@ -33,6 +34,7 @@ class Pages extends Main {
 		$tableCms->update();
 		$tableCms_static = new Cms_staticTable($select);
 		$tableCms_static->fetchOne();
+		$tableCms_static->title= $title;
 		$tableCms_static->content= $content;
 		$tableCms_static->update();
 	}

@@ -49,7 +49,7 @@ h1, h2, h3, h4 {
   -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 }
 
-.content, .content #nameArticle, .content .img-manager #sourse, .urlInput {
+.content, .content #nameArticle, .img-manager #sourse, .urlInput, .titleInput {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -169,7 +169,6 @@ body {
   padding: 0 20px 20px 20px;
   margin: 0;
   background: rgba(0, 0, 0, 0.1);
-  /*Img manager*/
 }
 .content h1, .content h2, .content p, .content ul li, .content a {
   padding: 0;
@@ -192,15 +191,27 @@ body {
   margin: 0 0 5px 0;
   outline: none;
 }
-.content .img-manager {
-  overflow: hidden;
-  border: 1px solid rgba(200, 200, 200, 0.4);
-  padding: 20px;
+
+.box-modal {
+  width: 900px;
 }
-.content .img-manager p {
+
+/*Img manager*/
+.mi-title {
+  font-size: 20px;
+  color: #E9E9E9;
+  text-align: center;
+}
+
+.img-manager {
+  overflow: hidden;
+  width: 840px;
+  padding: 5px;
+}
+.img-manager p {
   margin: 0 0 5px 0;
 }
-.content .img-manager #upload {
+.img-manager #upload {
   width: 80px;
   text-align: center;
   background: #E9E9E9;
@@ -208,21 +219,22 @@ body {
   color: #292929;
   border: 1px solid #b6b6b6;
 }
-.content .img-manager #status {
+.img-manager #status {
   display: block;
   padding: 5px;
   margin: 5px 0;
 }
-.content .img-manager #sourse {
+.img-manager #sourse {
   display: block;
   width: 100%;
-  height: 30px;
-  padding: 0 10px;
+  height: 36px;
+  padding: 0 8px;
   margin: 0 0 10px 0;
+  font-size: 13pt;
   outline: none;
-  border: 1px solid #785A80;
+  border: none;
 }
-.content .img-manager .img-prev {
+.img-manager .img-prev {
   float: left;
   margin: 5px 3px;
   cursor: pointer;
@@ -230,13 +242,13 @@ body {
   border-radius: 5px;
   transition: border .1s;
 }
-.content .img-manager .img-prev img {
+.img-manager .img-prev img {
   border-radius: 5px;
 }
-.content .img-manager .img-prev:hover {
+.img-manager .img-prev:hover {
   border: 3px solid #8A76AC;
 }
-.content .img-manager .img-prev button {
+.img-manager .img-prev button {
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -302,7 +314,7 @@ body {
 .pages .page .link:hover {
   border-bottom: 2px solid #fff;
 }
-.pages .page .delStaticPage, .pages .page .editStaticPage {
+.pages .page .delStaticPageBtn, .pages .page .viewStaticPage {
   position: absolute;
   top: 11px;
   width: 44px;
@@ -316,44 +328,47 @@ body {
   text-shadow: 0 1px 3px #313131;
   text-align: center;
 }
-.pages .page .delStaticPage {
+.pages .page .delStaticPageBtn {
   right: 20px;
   background: #D84363;
   transition: all .3s;
 }
-.pages .page .delStaticPage:hover {
+.pages .page .delStaticPageBtn:hover {
   color: #f7f7f7;
   background: #d53658;
 }
-.pages .page .delStaticPage:active {
+.pages .page .delStaticPageBtn:active {
   padding-top: 3px;
   color: #f0f0f0;
   background: #d12b4f;
 }
-.pages .page .editStaticPage {
+.pages .page .viewStaticPage {
   right: 80px;
   background: #4FA2C8;
 }
-.pages .page .editStaticPage:hover {
+.pages .page .viewStaticPage:hover {
   color: #f7f7f7;
   background: #439cc4;
 }
-.pages .page .editStaticPage:active {
+.pages .page .viewStaticPage:active {
   padding-top: 3px;
   color: #f0f0f0;
   background: #3b94bd;
 }
 
-#dataFormAddPage {
+#dataFormAddPage, #dataFormEditPage {
   position: relative;
 }
-#dataFormAddPage .icon-help {
+#dataFormAddPage .icon-help, #dataFormEditPage .icon-help {
   position: absolute;
-  right: 20px;
+  left: 390px;
   top: 12px;
   font-size: 22px;
   cursor: pointer;
   color: #8A76AC;
+}
+#dataFormAddPage .icon-help:hover, #dataFormEditPage .icon-help:hover {
+  color: #7c66a2;
 }
 
 .addStaticPage {
@@ -383,6 +398,29 @@ body {
   background: #44a68c;
 }
 
+#editStaticPage {
+  height: 38px;
+  margin: 20px 0 0 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  color: #FFF;
+  font-size: 16px;
+  background: #4FA2C8;
+  transition: all .3s;
+}
+#editStaticPage:hover {
+  color: #f7f7f7;
+  background: #439cc4;
+}
+#editStaticPage:active {
+  padding-top: 2px;
+  color: #f0f0f0;
+  background: #3b94bd;
+}
+
 .searchStaticPage {
   position: absolute;
   top: 20px;
@@ -398,11 +436,103 @@ body {
 }
 
 .urlInput {
-  width: 100%;
+  width: 420px;
   height: 35px;
   padding: 0 8px;
   margin: 10px 0;
   font-size: 14pt;
   border: none;
   border-radius: 1px;
+}
+
+.titleInput {
+  width: 420px;
+  height: 35px;
+  padding: 0 8px;
+  margin: 10px 0;
+  font-size: 14pt;
+  border: none;
+  border-radius: 1px;
+}
+
+.mi-btn {
+  position: absolute;
+  right: 20px;
+  top: 48px;
+  z-index: 1000;
+  width: 72px;
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  color: #FFF;
+  font-size: 20px;
+  background: #4FA2C8;
+  transition: all .2s;
+}
+.mi-btn:hover {
+  color: #f7f7f7;
+  background: #439cc4;
+}
+.mi-btn:active {
+  padding-top: 2px;
+  color: #f0f0f0;
+  background: #3b94bd;
+}
+
+.title_modal {
+  color: #EEEEEE;
+  text-align: center;
+}
+
+.btns-modal {
+  width: 175px;
+  height: 34px;
+  margin: 0 auto;
+}
+
+.delStaticPage {
+  width: 70px;
+  height: 34px;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #D84363;
+}
+.delStaticPage:hover {
+  color: #f7f7f7;
+  background: #d53658;
+}
+.delStaticPage:active {
+  color: #f0f0f0;
+  background: #d12b4f;
+}
+
+.cancel-modal {
+  display: inline-block;
+  width: 90px;
+}
+.cancel-modal button {
+  width: 90px;
+  height: 34px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #4FA2C8;
+}
+.cancel-modal button:hover {
+  color: #f7f7f7;
+  background: #439cc4;
+}
+.cancel-modal button:active {
+  color: #f0f0f0;
+  background: #3b94bd;
 }
